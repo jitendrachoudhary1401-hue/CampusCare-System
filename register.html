@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Account | CampusCare System</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <!-- LEFT PANEL -->
+        <section class="auth-brand-panel">
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    C
+                </div>
+
+                <span class="brand-tag">
+                    CAMPUSCARE SYSTEM
+                </span>
+
+                <h1>
+                    Your campus.
+                    <br>
+                    Your voice.
+                </h1>
+
+                <p>
+                    Create your student account and make
+                    your campus concerns heard through a
+                    simple and transparent complaint system.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        <div>
+                            <strong>Easy Reporting</strong>
+                            <small>
+                                Submit complaints in a few steps.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        <div>
+                            <strong>Track Progress</strong>
+                            <small>
+                                Follow the status of your complaints.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        <div>
+                            <strong>Transparent Resolution</strong>
+                            <small>
+                                Stay informed throughout the process.
+                            </small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+        <section class="auth-form-panel">
+
+            <div class="auth-box">
+
+                <div class="mobile-brand">
+                    <div class="brand-logo small">
+                        C
+                    </div>
+
+                    <span>
+                        CAMPUSCARE SYSTEM
+                    </span>
+                </div>
+
+
+                <div class="form-heading">
+
+                    <span class="form-eyebrow">
+                        STUDENT ACCOUNT
+                    </span>
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Join CampusCare and start managing
+                        your campus complaints.
+                    </p>
+
+                </div>
+
+
+                <form id="registerForm" novalidate>
+
+
+                    <!-- NAME -->
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                ◉
+                            </span>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STUDENT ID -->
+                    <div class="form-group">
+
+                        <label for="studentId">
+                            Student ID
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                #
+                            </span>
+
+                            <input
+                                type="text"
+                                id="studentId"
+                                placeholder="Enter your student ID"
+                                autocomplete="off"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            College Email
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                @
+                            </span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your college email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                *
+                            </span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                        <div
+                            class="password-strength"
+                            id="passwordStrength"
+                        >
+                            <div class="strength-bars">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <small id="strengthText">
+                                Use at least 6 characters
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                *
+                            </span>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+                    <div
+                        id="message"
+                        class="form-message"
+                        role="alert"
+                    ></div>
+
+
+                    <!-- BUTTON -->
+                    <button
+                        type="submit"
+                        id="registerBtn"
+                        class="auth-submit"
+                    >
+
+                        <span id="registerBtnText">
+                            Create Account
+                        </span>
+
+                        <span
+                            id="registerLoader"
+                            class="button-loader hidden"
+                        ></span>
+
+                    </button>
+
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>Already registered?</span>
+                </div>
+
+
+                <a
+                    href="login.html"
+                    class="secondary-btn"
+                >
+                    Sign in to CampusCare
+                </a>
+
+
+                <p class="auth-footer">
+                    CampusCare System
+                    <span>•</span>
+                    Student Portal
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script type="module" src="js/auth.js"></script>
+
+</body>
+
+</html>

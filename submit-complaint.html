@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Submit Complaint | CampusCare</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/submit-complaint.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                C
+            </div>
+
+            <div class="brand-text">
+
+                <strong>CampusCare</strong>
+
+                <span>Student Portal</span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item"
+                id="dashboardBtn"
+                type="button"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </button>
+
+
+            <button
+                class="nav-item active"
+                type="button"
+            >
+
+                <span class="nav-icon">+</span>
+
+                <span>Submit Complaint</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="complaintsBtn"
+                type="button"
+            >
+
+                <span class="nav-icon">≡</span>
+
+                <span>My Complaints</span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="student-mini-profile">
+
+                <div
+                    class="mini-avatar"
+                    id="sidebarAvatar"
+                >
+                    S
+                </div>
+
+                <div>
+
+                    <strong id="sidebarName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                type="button"
+            >
+
+                <span>↪</span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <div class="main-wrapper">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                id="menuBtn"
+                class="menu-btn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    Student Portal
+                </span>
+
+                <strong>
+                    CampusCare System
+                </strong>
+
+            </div>
+
+
+            <button
+                id="profileBtn"
+                class="top-profile"
+                type="button"
+            >
+
+                <div
+                    class="top-avatar"
+                    id="topAvatar"
+                >
+                    S
+                </div>
+
+                <div class="top-profile-info">
+
+                    <strong id="topProfileName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =========================================
+             CONTENT
+        ========================================== -->
+
+        <main class="page-container">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        CAMPUSCARE • COMPLAINT CENTER
+                    </span>
+
+                    <h1>
+                        Submit a Complaint
+                    </h1>
+
+                    <p>
+                        Tell us about a campus issue and
+                        we'll make sure it reaches the
+                        appropriate authority.
+                    </p>
+
+                </div>
+
+
+                <div class="header-icon">
+
+                    <span>+</span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 FORM AREA
+            ====================================== -->
+
+            <section class="complaint-layout">
+
+
+                <!-- FORM -->
+
+                <div class="form-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                NEW COMPLAINT
+                            </span>
+
+                            <h2>
+                                Complaint Details
+                            </h2>
+
+                        </div>
+
+                        <span class="required-note">
+                            * Required
+                        </span>
+
+                    </div>
+
+
+
+                    <form id="complaintForm">
+
+
+                        <!-- CATEGORY -->
+
+                        <div class="form-group">
+
+                            <label for="category">
+
+                                Complaint Category
+
+                                <span>*</span>
+
+                            </label>
+
+
+                            <select
+                                id="category"
+                                required
+                            >
+
+                                <option
+                                    value=""
+                                    selected
+                                    disabled
+                                >
+                                    Select a category
+                                </option>
+
+                                <option value="Academic">
+                                    Academic
+                                </option>
+
+                                <option value="Infrastructure">
+                                    Infrastructure
+                                </option>
+
+                                <option value="Cleanliness">
+                                    Cleanliness
+                                </option>
+
+                                <option value="Hostel">
+                                    Hostel
+                                </option>
+
+                                <option value="Library">
+                                    Library
+                                </option>
+
+                                <option value="Canteen">
+                                    Canteen
+                                </option>
+
+                                <option value="Transportation">
+                                    Transportation
+                                </option>
+
+                                <option value="Security">
+                                    Security
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- SUBJECT -->
+
+                        <div class="form-group">
+
+                            <label for="subject">
+
+                                Complaint Subject
+
+                                <span>*</span>
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="subject"
+                                maxlength="100"
+                                placeholder="Briefly describe the issue"
+                                required
+                            >
+
+                            <div class="field-footer">
+
+                                <span>
+                                    Keep it short and specific.
+                                </span>
+
+                                <span id="subjectCounter">
+                                    0 / 100
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="description">
+
+                                Description
+
+                                <span>*</span>
+
+                            </label>
+
+
+                            <textarea
+                                id="description"
+                                maxlength="1000"
+                                placeholder="Describe the issue in detail. Include useful information such as location, date, and what happened."
+                                required
+                            ></textarea>
+
+
+                            <div class="field-footer">
+
+                                <span>
+                                    Provide enough detail to help us understand the issue.
+                                </span>
+
+                                <span id="descriptionCounter">
+                                    0 / 1000
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- NOTICE -->
+
+                        <div class="privacy-notice">
+
+                            <div class="notice-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Your complaint is secure
+                                </strong>
+
+                                <p>
+                                    Your complaint will be associated
+                                    with your student account so you
+                                    can track its progress.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- MESSAGE -->
+
+                        <div
+                            id="message"
+                            class="form-message"
+                        ></div>
+
+
+
+                        <!-- BUTTONS -->
+
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                id="cancelBtn"
+                                class="cancel-btn"
+                            >
+                                Cancel
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                id="submitBtn"
+                                class="submit-btn"
+                            >
+
+                                <span>
+                                    Submit Complaint
+                                </span>
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- SIDE INFORMATION -->
+
+                <aside class="info-card">
+
+                    <div class="info-icon">
+                        ✓
+                    </div>
+
+                    <span class="section-label">
+                        BEFORE YOU SUBMIT
+                    </span>
+
+                    <h2>
+                        Help us resolve it faster
+                    </h2>
+
+                    <p>
+                        A clear and detailed complaint helps
+                        the college understand the problem and
+                        take appropriate action.
+                    </p>
+
+
+                    <div class="tips-list">
+
+
+                        <div class="tip">
+
+                            <span>01</span>
+
+                            <div>
+
+                                <strong>
+                                    Be specific
+                                </strong>
+
+                                <p>
+                                    Mention exactly what
+                                    happened.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="tip">
+
+                            <span>02</span>
+
+                            <div>
+
+                                <strong>
+                                    Mention the location
+                                </strong>
+
+                                <p>
+                                    Tell us where the issue
+                                    occurred.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="tip">
+
+                            <span>03</span>
+
+                            <div>
+
+                                <strong>
+                                    Avoid duplicate complaints
+                                </strong>
+
+                                <p>
+                                    Check your complaints
+                                    before submitting again.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SUCCESS MODAL
+    ========================================== -->
+
+    <div
+        id="successModal"
+        class="modal-overlay hidden"
+    >
+
+        <div class="success-modal">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="section-label">
+                COMPLAINT SUBMITTED
+            </span>
+
+            <h2>
+                Your complaint has been submitted
+            </h2>
+
+            <p>
+                Your complaint is now in the system.
+                You can track its progress from
+                <strong>My Complaints</strong>.
+            </p>
+
+
+            <div class="success-actions">
+
+                <button
+                    id="successDashboardBtn"
+                    type="button"
+                    class="secondary-modal-btn"
+                >
+                    Dashboard
+                </button>
+
+                <button
+                    id="successComplaintsBtn"
+                    type="button"
+                    class="primary-modal-btn"
+                >
+                    View My Complaints →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script
+        type="module"
+        src="./js/submit-complaint.js"
+    ></script>
+
+</body>
+
+</html>

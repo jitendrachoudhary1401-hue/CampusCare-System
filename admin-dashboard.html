@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | CampusCare System</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/admin-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+<!-- =====================================
+     SIDEBAR
+====================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            C
+        </div>
+
+        <div class="brand-text">
+
+            <h2>
+                CampusCare
+            </h2>
+
+            <span>
+                Admin Portal
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <button
+            type="button"
+            id="dashboardNavBtn"
+            class="nav-item active"
+        >
+
+            <span class="nav-icon">
+                ⌂
+            </span>
+
+            <span>
+                Dashboard
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            id="usersNavBtn"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                ◉
+            </span>
+
+            <span>
+                Users
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            id="complaintsNavBtn"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                ▣
+            </span>
+
+            <span>
+                Complaints
+            </span>
+
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-role-card">
+
+            <div class="role-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong id="sidebarAdminName">
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="logoutBtn"
+            class="logout-btn"
+        >
+
+            <span>
+                ↪
+            </span>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================
+     MAIN WRAPPER
+====================================== -->
+
+<div class="main-wrapper">
+
+
+    <!-- =================================
+         TOPBAR
+    ================================== -->
+
+    <header class="topbar">
+
+        <button
+            type="button"
+            id="menuBtn"
+            class="menu-btn"
+        >
+            ☰
+        </button>
+
+
+        <div class="topbar-title">
+
+            <span>
+                Admin Portal
+            </span>
+
+            <strong>
+                CampusCare Administration
+            </strong>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="profileBtn"
+            class="top-profile"
+        >
+
+            <div class="top-avatar">
+                A
+            </div>
+
+            <div class="top-profile-info">
+
+                <strong id="topProfileName">
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- =================================
+             DASHBOARD SECTION
+        ================================== -->
+
+        <section
+            id="dashboardSection"
+            class="page-section active-section"
+        >
+
+
+            <!-- HERO -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ADMIN DASHBOARD
+                    </span>
+
+                    <h1 id="welcomeMessage">
+                        Welcome, Admin!
+                    </h1>
+
+                    <p>
+                        Manage users, monitor complaints,
+                        and oversee the CampusCare system
+                        from one place.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-decoration">
+
+                    <div class="decoration-circle">
+                        A
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ◉
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Students
+                        </span>
+
+                        <strong id="totalStudents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        P
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Principals
+                        </span>
+
+                        <strong id="totalPrincipals">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        C
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Coordinators
+                        </span>
+
+                        <strong id="totalCoordinators">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon cyan">
+                        #
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Complaints
+                        </span>
+
+                        <strong id="totalComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        !
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ↻
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Under Review
+                        </span>
+
+                        <strong id="reviewComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Resolved
+                        </span>
+
+                        <strong id="resolvedComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="quick-actions-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            QUICK ACCESS
+                        </span>
+
+                        <h2>
+                            System Management
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button
+                        type="button"
+                        id="viewUsersBtn"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon blue">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Manage Users
+                            </strong>
+
+                            <span>
+                                View and search registered users
+                            </span>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="viewComplaintsBtn"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon purple">
+                            ▣
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                View Complaints
+                            </strong>
+
+                            <span>
+                                Review all campus complaints
+                            </span>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RECENT ACTIVITY -->
+
+            <section class="content-card activity-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            SYSTEM ACTIVITY
+                        </span>
+
+                        <h2>
+                            Recent Activity
+                        </h2>
+
+                        <p>
+                            Latest actions performed in CampusCare.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="refreshActivityBtn"
+                        class="refresh-btn"
+                    >
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div id="activityContainer">
+
+                    <div class="loading-state">
+
+                        <div class="loader"></div>
+
+                        <p id="activityLoading">
+                            Loading recent activity...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- =================================
+             USERS SECTION
+        ================================== -->
+
+        <section
+            id="usersSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        USER MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Users
+                    </h1>
+
+                    <p>
+                        View and manage CampusCare accounts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <section class="content-card">
+
+                <div class="control-bar">
+
+                    <div class="search-box">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <input
+                            type="text"
+                            id="userSearch"
+                            placeholder="Search by name, email or student ID..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="userRoleFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Roles
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="coordinator">
+                            Coordinator
+                        </option>
+
+                        <option value="principal">
+                            Principal
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="usersContainer">
+
+                    <div class="loading-state">
+
+                        <div class="loader"></div>
+
+                        <p>
+                            Loading users...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- =================================
+             COMPLAINTS SECTION
+        ================================== -->
+
+        <section
+            id="complaintsSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        COMPLAINT MANAGEMENT
+                    </span>
+
+                    <h1>
+                        All Complaints
+                    </h1>
+
+                    <p>
+                        Search, review and monitor complaints
+                        across the campus.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <section class="content-card">
+
+                <div class="control-bar">
+
+                    <div class="search-box">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <input
+                            type="text"
+                            id="complaintSearch"
+                            placeholder="Search by subject, category, student ID or complaint ID..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="complaintStatusFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Statuses
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="under-review">
+                            Under Review
+                        </option>
+
+                        <option value="resolved">
+                            Resolved
+                        </option>
+
+                        <option value="rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="complaintsContainer">
+
+                    <div class="loading-state">
+
+                        <div class="loader"></div>
+
+                        <p>
+                            Loading complaints...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================
+     PROFILE MODAL
+====================================== -->
+
+<div
+    id="profileModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="profile-modal">
+
+        <button
+            type="button"
+            id="closeProfileBtn"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+
+        <div class="large-profile-avatar">
+            A
+        </div>
+
+
+        <span class="profile-badge">
+            ADMINISTRATOR
+        </span>
+
+
+        <h2 id="profileName">
+            Admin
+        </h2>
+
+
+        <p id="profileEmail">
+            Loading...
+        </p>
+
+
+        <div class="profile-info-box">
+
+            <div>
+
+                <span>
+                    Account Role
+                </span>
+
+                <strong id="profileRole">
+                    Administrator
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Access
+                </span>
+
+                <strong>
+                    System Management
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="profileCloseBtn"
+            class="modal-action-btn"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     COMPLAINT MODAL
+====================================== -->
+
+<div
+    id="complaintModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="complaint-modal">
+
+        <button
+            type="button"
+            id="closeComplaintModal"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+
+        <span class="section-label">
+            COMPLAINT DETAILS
+        </span>
+
+
+        <h2>
+            Complaint Details
+        </h2>
+
+
+        <div id="complaintDetails"></div>
+
+    </div>
+
+</div>
+
+
+
+<script
+    type="module"
+    src="./js/admin-dashboard.js"
+></script>
+
+</body>
+
+</html>

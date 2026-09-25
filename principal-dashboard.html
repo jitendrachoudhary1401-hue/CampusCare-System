@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Principal Dashboard | CampusCare System</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/principal-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                C
+            </div>
+
+            <div class="brand-text">
+
+                <h2>CampusCare</h2>
+
+                <span>
+                    Principal Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                id="dashboardNavBtn"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="complaintsNavBtn"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Complaints
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="profileNavBtn"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    My Profile
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="principal-mini-profile">
+
+                <div class="principal-avatar">
+                    P
+                </div>
+
+                <div>
+
+                    <strong id="sidebarPrincipalName">
+                        Principal
+                    </strong>
+
+                    <span>
+                        Principal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                type="button"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN WRAPPER
+    ========================================== -->
+
+    <div class="main-wrapper">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="topbar">
+
+            <button
+                id="menuBtn"
+                class="menu-btn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    Principal Portal
+                </span>
+
+                <strong>
+                    Complaint Management Center
+                </strong>
+
+            </div>
+
+
+            <button
+                id="profileBtn"
+                class="top-profile"
+                type="button"
+            >
+
+                <div class="top-avatar">
+                    P
+                </div>
+
+                <div class="top-profile-info">
+
+                    <strong id="topProfileName">
+                        Principal
+                    </strong>
+
+                    <span>
+                        Principal
+                    </span>
+
+                </div>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="dashboard-container">
+
+
+            <!-- =================================
+                 HERO
+            ================================== -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <span class="eyebrow">
+                        PRINCIPAL DASHBOARD
+                    </span>
+
+
+                    <h1 id="welcomeMessage">
+                        Welcome, Principal!
+                    </h1>
+
+
+                    <p>
+                        Manage, review and respond to
+                        student complaints from one
+                        centralized workspace.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-decoration">
+
+                    <div class="decoration-circle">
+                        ✓
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 STATISTICS
+            ================================== -->
+
+            <section class="stats-grid">
+
+
+                <!-- TOTAL -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        #
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Complaints
+                        </span>
+
+                        <strong id="totalComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PENDING -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        !
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UNDER REVIEW -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ◉
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Under Review
+                        </span>
+
+                        <strong id="reviewComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESOLVED -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Resolved
+                        </span>
+
+                        <strong id="resolvedComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 COMPLAINTS SECTION
+            ================================== -->
+
+            <section
+                class="complaints-section"
+                id="complaintsSection"
+            >
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            COMPLAINT MANAGEMENT
+                        </span>
+
+                        <h2>
+                            All Complaints
+                        </h2>
+
+                        <p>
+                            Review complaints, update their
+                            status and provide responses.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="refreshBtn"
+                        class="refresh-btn"
+                        type="button"
+                    >
+
+                        <span>
+                            ↻
+                        </span>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Loading -->
+
+                <p
+                    id="loadingMessage"
+                    class="loading-message"
+                >
+                    Loading complaints...
+                </p>
+
+
+
+                <!-- Complaints generated by JS -->
+
+                <div
+                    id="complaintsContainer"
+                    class="complaints-container"
+                >
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         PROFILE MODAL
+    ========================================== -->
+
+    <div
+        id="profileModal"
+        class="modal-overlay hidden"
+    >
+
+        <div class="profile-modal">
+
+            <button
+                id="closeProfileBtn"
+                class="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <div class="large-profile-avatar">
+                P
+            </div>
+
+
+            <span class="profile-badge">
+                PRINCIPAL
+            </span>
+
+
+            <h2 id="profileName">
+                Principal
+            </h2>
+
+
+            <p id="profileEmail">
+                Loading...
+            </p>
+
+
+            <div class="profile-info-box">
+
+
+                <div>
+
+                    <span>
+                        Account Role
+                    </span>
+
+                    <strong id="profileRole">
+                        Principal
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Access
+                    </span>
+
+                    <strong>
+                        Complaint Management
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="profileCloseBtn"
+                class="modal-action-btn"
+                type="button"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        type="module"
+        src="./js/principal-dashboard.js"
+    ></script>
+
+</body>
+
+</html>

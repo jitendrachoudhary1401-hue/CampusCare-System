@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Coordinator Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/coordinator-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                C
+            </div>
+
+            <div>
+                <h2>CampusCare</h2>
+                <span>Coordinator Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                id="dashboardNavBtn"
+                type="button"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="resolvedNavBtn"
+                type="button"
+            >
+                <span class="nav-icon">✓</span>
+                <span>Resolved Complaints</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="profileNavBtn"
+                type="button"
+            >
+                <span class="nav-icon">◉</span>
+                <span>My Profile</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="role-card">
+
+                <div class="role-avatar">
+                    C
+                </div>
+
+                <div>
+
+                    <strong id="sidebarUserName">
+                        Coordinator
+                    </strong>
+
+                    <span>
+                        Coordinator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                type="button"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <div class="main-wrapper">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                id="menuBtn"
+                class="menu-btn"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    Coordinator Portal
+                </span>
+
+                <strong>
+                    Complaint Resolution Center
+                </strong>
+
+            </div>
+
+
+            <button
+                id="profileBtn"
+                class="top-profile"
+                type="button"
+            >
+
+                <div class="top-avatar">
+                    C
+                </div>
+
+                <div class="top-profile-info">
+
+                    <strong id="topProfileName">
+                        Coordinator
+                    </strong>
+
+                    <span>
+                        Coordinator
+                    </span>
+
+                </div>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+        <main class="dashboard-container">
+
+
+            <!-- HERO -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <span class="eyebrow">
+                        COORDINATOR DASHBOARD
+                    </span>
+
+                    <h1 id="welcomeMessage">
+                        Welcome, Coordinator
+                    </h1>
+
+                    <p>
+                        Manage resolved complaints and
+                        record student notifications from
+                        one place.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-decoration">
+
+                    <div class="decoration-circle">
+                        ✓
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STATS -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        #
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Complaints
+                        </span>
+
+                        <strong id="totalComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Resolved
+                        </span>
+
+                        <strong id="resolvedComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ◉
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Notifications Sent
+                        </span>
+
+                        <strong id="notificationsSent">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- COMPLAINTS -->
+
+            <section
+                id="complaintsSection"
+                class="content-card"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            RESOLUTION QUEUE
+                        </span>
+
+                        <h2>
+                            Resolved Complaints
+                        </h2>
+
+                        <p>
+                            Review completed complaints
+                            and record student notifications.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="refreshBtn"
+                        class="refresh-btn"
+                        type="button"
+                    >
+                        <span>↻</span>
+                        Refresh
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="complaintsContainer"
+                    class="complaints-container"
+                >
+
+                    <div class="loading-state">
+
+                        <div class="loader"></div>
+
+                        <p>
+                            Loading complaints...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PROFILE MODAL
+    ====================================== -->
+
+    <div
+        id="profileModal"
+        class="modal-overlay hidden"
+    >
+
+        <div class="profile-modal">
+
+            <button
+                id="closeProfileBtn"
+                class="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <div class="large-profile-avatar">
+                C
+            </div>
+
+
+            <span class="profile-badge">
+                COORDINATOR
+            </span>
+
+
+            <h2 id="profileName">
+                Coordinator
+            </h2>
+
+
+            <p id="profileEmail">
+                Loading...
+            </p>
+
+
+            <div class="profile-info-box">
+
+                <div>
+
+                    <span>
+                        Account Role
+                    </span>
+
+                    <strong id="profileRole">
+                        Coordinator
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Access
+                    </span>
+
+                    <strong>
+                        Complaint Resolution
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="profileCloseBtn"
+                class="modal-action-btn"
+                type="button"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script
+        type="module"
+        src="./js/coordinator-dashboard.js"
+    ></script>
+
+</body>
+
+</html>

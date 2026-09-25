@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CampusCare System - College Complaint Management Portal"
+    >
+
+    <title>CampusCare System | Login</title>
+
+
+    <!-- Splash Screen -->
+    <link
+        rel="stylesheet"
+        href="./css/splash.css"
+    >
+
+
+    <!-- Login Styling -->
+    <link
+        rel="stylesheet"
+        href="./css/auth.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         CAMPUSCARE SPLASH SCREEN
+    ====================================== -->
+
+    <div
+        id="campuscareSplash"
+        aria-label="Loading CampusCare System"
+    >
+
+        <div class="splash-content">
+
+            <img
+                src="./assets/campuscare-splash.png"
+                alt="CampusCare System"
+                class="splash-logo"
+            >
+
+            <div class="splash-loading">
+
+                <div class="splash-progress-track">
+
+                    <div
+                        id="splashProgress"
+                        class="splash-progress"
+                    ></div>
+
+                </div>
+
+
+                <div class="splash-loading-text">
+
+                    Loading CampusCare System
+
+                    <span class="splash-loading-dots">
+                        <span>.</span>
+                        <span>.</span>
+                        <span>.</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         LOGIN PAGE
+    ====================================== -->
+
+    <main class="login-page">
+
+
+        <!-- =================================
+             LEFT BRANDING PANEL
+        ================================== -->
+
+        <section class="login-brand-panel">
+
+            <div class="brand-background-circle circle-one"></div>
+            <div class="brand-background-circle circle-two"></div>
+
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+
+                    <div class="brand-logo-mark">
+                        C
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            CampusCare
+                        </strong>
+
+                        <span>
+                            System
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="brand-main">
+
+                    <span class="brand-eyebrow">
+                        CAMPUS COMPLAINT MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Your Voice.
+                        <br>
+                        <span>Our Responsibility.</span>
+                    </h1>
+
+                    <p>
+                        A centralized platform for students
+                        and college authorities to submit,
+                        manage and resolve campus complaints.
+                    </p>
+
+                </div>
+
+
+                <div class="brand-features">
+
+                    <div class="brand-feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Easy Complaint Tracking
+                            </strong>
+
+                            <span>
+                                Follow your complaint from
+                                submission to resolution.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="brand-feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Role-Based Access
+                            </strong>
+
+                            <span>
+                                Secure access for students
+                                and college authorities.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="brand-feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Transparent Resolution
+                            </strong>
+
+                            <span>
+                                Keep complaint handling
+                                organized and accountable.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="brand-footer">
+                CampusCare System
+                <span>•</span>
+                College Complaint Portal
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             RIGHT LOGIN PANEL
+        ================================== -->
+
+        <section class="login-form-panel">
+
+
+            <div class="login-card">
+
+
+                <!-- MOBILE BRAND -->
+
+                <div class="mobile-brand">
+
+                    <div class="mobile-brand-icon">
+                        C
+                    </div>
+
+                    <div>
+                        <strong>
+                            CampusCare
+                        </strong>
+
+                        <span>
+                            System
+                        </span>
+                    </div>
+
+                </div>
+
+
+
+                <!-- HEADER -->
+
+                <div class="login-header">
+
+                    <span class="login-label">
+                        WELCOME BACK
+                    </span>
+
+                    <h2>
+                        Sign in to your account
+                    </h2>
+
+                    <p>
+                        Access your CampusCare dashboard
+                        securely.
+                    </p>
+
+                </div>
+
+
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    id="loginForm"
+                    novalidate
+                >
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                @
+                            </span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+    <div class="label-row">
+
+        <label for="password">
+            Password
+        </label>
+
+    </div>
+
+
+    <div class="input-wrapper">
+
+        <span class="input-icon">
+            •
+        </span>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+        >
+
+        <button
+            type="button"
+            id="togglePassword"
+            class="password-toggle"
+            aria-label="Show password"
+        >
+            Show
+        </button>
+
+    </div>
+
+
+    <!-- Forgot Password -->
+
+    <div class="forgot-password">
+
+        <a
+            href="#"
+            id="forgotPasswordBtn"
+        >
+            Forgot Password?
+        </a>
+
+    </div>
+
+</div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div
+                        id="message"
+                        class="form-message"
+                        role="alert"
+                    ></div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        id="loginBtn"
+                        class="login-button"
+                    >
+
+                        <span
+                            id="loginButtonText"
+                        >
+                            Sign In
+                        </span>
+
+                        <span
+                            id="loginLoader"
+                            class="button-loader"
+                        ></span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- REGISTER -->
+
+                <div class="register-section">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a href="register.html">
+                        Create an account
+                    </a>
+
+                </div>
+
+
+
+                <!-- SECURITY -->
+
+                <div class="security-note">
+
+                    <span class="security-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Secure authentication powered by
+                        Firebase
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- COPYRIGHT -->
+
+            <div class="login-footer">
+
+                <span>
+                    © 2026 CampusCare System
+                </span>
+
+                <span>
+                    College Complaint Management Portal
+                </span>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         SCRIPTS
+    ====================================== -->
+
+    <script src="./js/splash.js"></script>
+
+
+    <script
+        type="module"
+        src="./js/login.js"
+    ></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Complaints | CampusCare System</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/my-complaints.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     BACKGROUND
+========================================= -->
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            C
+        </div>
+
+        <div class="brand-text">
+
+            <h2>
+                CampusCare
+            </h2>
+
+            <span>
+                Student Portal
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <button
+            class="nav-item"
+            id="dashboardBtn"
+            type="button"
+        >
+
+            <span class="nav-icon">
+                ⌂
+            </span>
+
+            Dashboard
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="submitBtn"
+            type="button"
+        >
+
+            <span class="nav-icon">
+                ＋
+            </span>
+
+            Submit Complaint
+
+        </button>
+
+
+        <button
+            class="nav-item active"
+            id="complaintsBtn"
+            type="button"
+        >
+
+            <span class="nav-icon">
+                ☷
+            </span>
+
+            My Complaints
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="profileBtn"
+            type="button"
+        >
+
+            <span class="nav-icon">
+                ◉
+            </span>
+
+            My Profile
+
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="user-mini">
+
+            <div
+                class="user-avatar"
+                id="sidebarAvatar"
+            >
+                S
+            </div>
+
+            <div>
+
+                <strong id="sidebarUserName">
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="logoutBtn"
+            class="logout-btn"
+            type="button"
+        >
+
+            <span>
+                ↪
+            </span>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<div class="main-wrapper">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            type="button"
+        >
+            ☰
+        </button>
+
+
+        <div class="topbar-title">
+
+            <span>
+                CampusCare System
+            </span>
+
+            <strong>
+                My Complaints
+            </strong>
+
+        </div>
+
+
+        <button
+            id="topProfileBtn"
+            class="top-profile"
+            type="button"
+        >
+
+            <div
+                class="top-avatar"
+                id="topAvatar"
+            >
+                S
+            </div>
+
+            <div class="top-profile-info">
+
+                <strong id="topProfileName">
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================================
+         CONTENT
+    ========================================= -->
+
+    <main class="page-container">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-hero">
+
+            <div>
+
+                <span class="eyebrow">
+                    COMPLAINT CENTER
+                </span>
+
+                <h1>
+                    My Complaints
+                </h1>
+
+                <p>
+                    Track your submitted complaints,
+                    monitor their progress and view
+                    responses from the college.
+                </p>
+
+            </div>
+
+
+            <div class="hero-icon">
+                ☷
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    #
+                </div>
+
+                <div>
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="totalComplaints">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◷
+                </div>
+
+                <div>
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingComplaints">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Resolved
+                    </span>
+
+                    <strong id="resolvedComplaints">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             COMPLAINT SECTION
+        ====================================== -->
+
+        <section class="complaints-card">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        COMPLAINT HISTORY
+                    </span>
+
+                    <h2>
+                        Your Submitted Complaints
+                    </h2>
+
+                    <p>
+                        View the current status and
+                        response for every complaint.
+                    </p>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button
+                        id="refreshBtn"
+                        class="refresh-btn"
+                        type="button"
+                    >
+                        ↻ Refresh
+                    </button>
+
+
+                    <button
+                        id="newComplaintBtn"
+                        class="primary-btn"
+                        type="button"
+                    >
+                        + New Complaint
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="tools-bar">
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search your complaints..."
+                    >
+
+                </div>
+
+
+                <select
+                    id="statusFilter"
+                    class="status-filter"
+                >
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="under-review">
+                        Under Review
+                    </option>
+
+                    <option value="in-progress">
+                        In Progress
+                    </option>
+
+                    <option value="resolved">
+                        Resolved
+                    </option>
+
+                    <option value="rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- LOADING -->
+
+            <div
+                id="loadingMessage"
+                class="loading-state"
+            >
+
+                <div class="loader"></div>
+
+                <p>
+                    Loading your complaints...
+                </p>
+
+            </div>
+
+
+
+            <!-- COMPLAINTS -->
+
+            <div
+                id="complaintsContainer"
+                class="complaints-container"
+            ></div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================
+     PROFILE MODAL
+========================================= -->
+
+<div
+    id="profileModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="profile-modal">
+
+
+        <button
+            id="closeProfileBtn"
+            class="modal-close"
+            type="button"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="large-profile-avatar"
+            id="profileAvatar"
+        >
+            S
+        </div>
+
+
+        <span class="profile-badge">
+            STUDENT
+        </span>
+
+
+        <h2 id="profileName">
+            Student
+        </h2>
+
+
+        <p id="profileEmail">
+            Loading...
+        </p>
+
+
+        <div class="profile-info-box">
+
+
+            <div>
+
+                <span>
+                    Student ID
+                </span>
+
+                <strong id="profileStudentId">
+                    Loading...
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Account Role
+                </span>
+
+                <strong>
+                    Student
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            id="profileCloseBtn"
+            class="modal-action-btn"
+            type="button"
+        >
+            Close
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script
+    type="module"
+    src="js/my-complaints.js"
+></script>
+
+
+</body>
+
+</html>

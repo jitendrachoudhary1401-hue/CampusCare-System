@@ -1,0 +1,891 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+}
+
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#usersSection,
+#complaintsSection {
+    display: none;
+    margin-top: 30px;
+}
+
+.user-card,
+.complaint-card {
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.user-card h4,
+.complaint-card h4 {
+    margin-top: 0;
+}
+.user-controls {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.user-controls input,
+.user-controls select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.user-controls input {
+    min-width: 280px;
+}
+
+.user-controls select {
+    min-width: 160px;
+}
+
+.user-card {
+    padding: 18px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.user-card h4 {
+    margin-top: 0;
+}
+.complaint-controls {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.complaint-controls input,
+.complaint-controls select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.complaint-controls input {
+    min-width: 320px;
+}
+
+.complaint-controls select {
+    min-width: 170px;
+}
+
+.complaint-card {
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.complaint-card h4 {
+    margin-top: 0;
+}
+
+.admin-response {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+/* =====================================
+   COMPLAINT DETAIL MODAL
+===================================== */
+
+.complaint-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+.complaint-modal.show {
+    display: flex;
+}
+
+
+.complaint-modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+.complaint-modal-content h2 {
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+
+.close-modal {
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.detail-row {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.detail-row strong {
+    font-size: 14px;
+}
+
+
+.detail-row span,
+.detail-row p {
+    margin: 0;
+
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+
+.detail-description p,
+.detail-response p {
+    margin-top: 8px;
+
+    padding: 12px;
+
+    background: #f7f7f7;
+
+    border-radius: 8px;
+}
+
+
+.view-complaint-btn {
+    margin-top: 12px;
+
+    padding: 9px 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+#complaintsSection {
+    display: block;
+}
+
+#complaintsContainer {
+    display: block;
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.complaint-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* =====================================
+   ADMIN DASHBOARD
+===================================== */
+
+.admin-page {
+    margin: 0;
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+
+/* SIDEBAR */
+
+.admin-sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 240px;
+
+    padding: 25px 18px;
+
+    background: #172033;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-sizing: border-box;
+}
+
+
+.admin-brand {
+    margin-bottom: 40px;
+}
+
+
+.admin-brand h2 {
+    margin: 0;
+}
+
+
+.admin-brand p {
+    margin-top: 5px;
+
+    opacity: 0.7;
+
+    font-size: 13px;
+}
+
+
+.admin-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.admin-nav-btn,
+.admin-logout {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+.admin-nav-btn:hover,
+.admin-nav-btn.active {
+    background: rgba(255,255,255,0.12);
+}
+
+
+.admin-logout {
+    margin-top: auto;
+
+    background: rgba(255,255,255,0.08);
+}
+
+
+.admin-logout:hover {
+    background: rgba(255,255,255,0.16);
+}
+
+
+/* MAIN */
+
+.admin-main {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+
+.admin-header {
+    margin-bottom: 30px;
+}
+
+
+.admin-header h1 {
+    margin-bottom: 5px;
+}
+
+
+.admin-header p {
+    margin-top: 0;
+
+    opacity: 0.7;
+}
+
+
+/* STATISTICS */
+
+.admin-stat-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+
+.admin-stat-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e4e7ec;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.04);
+}
+
+
+.admin-stat-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 14px;
+
+    opacity: 0.65;
+}
+
+
+.admin-stat-card strong {
+    font-size: 30px;
+}
+
+
+/* QUICK ACTIONS */
+
+.admin-quick-actions {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+.admin-quick-actions button {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* USERS / COMPLAINTS */
+
+#usersSection,
+#complaintsSection {
+    background: transparent;
+}
+
+
+#usersSection h2,
+#complaintsSection h2 {
+    margin-bottom: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .admin-sidebar {
+        position: relative;
+
+        width: 100%;
+
+        min-height: auto;
+    }
+
+
+    .admin-main {
+        margin-left: 0;
+
+        padding: 20px;
+    }
+
+
+    .admin-nav {
+        flex-direction: row;
+
+        overflow-x: auto;
+    }
+
+
+    .admin-nav-btn {
+        white-space: nowrap;
+    }
+
+
+    .admin-logout {
+        margin-top: 15px;
+    }
+
+}
+
+/* =====================================
+   BUTTON HOVER EFFECTS
+===================================== */
+
+.admin-quick-actions button,
+.admin-nav-btn,
+.admin-logout,
+.view-complaint-btn,
+.user-controls button,
+.complaint-controls button {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.admin-quick-actions button:hover,
+.view-complaint-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Sidebar buttons */
+
+.admin-nav-btn:hover {
+    transform: translateX(4px);
+}
+
+
+/* Logout */
+
+.admin-logout:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Press effect */
+
+.admin-quick-actions button:active,
+.admin-nav-btn:active,
+.admin-logout:active,
+.view-complaint-btn:active {
+    transform: scale(0.97);
+}
+
+/* =====================================
+   RECENT ACTIVITY
+===================================== */
+
+.recent-activity-section {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #e4e7ec;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading h2 {
+    margin: 0;
+}
+
+
+.section-heading p {
+    margin: 5px 0 0;
+
+    opacity: 0.65;
+
+    font-size: 14px;
+}
+
+
+#refreshActivityBtn {
+    padding: 9px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #172033;
+
+    color: white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#refreshActivityBtn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.activity-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 16px 5px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+
+.activity-card:last-child {
+    border-bottom: none;
+}
+
+
+.activity-icon {
+    width: 42px;
+
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f1f3f7;
+
+    font-size: 20px;
+}
+
+
+.activity-content h3 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+}
+
+
+.activity-content p {
+    margin: 0 0 6px;
+
+    font-size: 14px;
+
+    opacity: 0.75;
+}
+
+
+.activity-content small {
+    font-size: 12px;
+
+    opacity: 0.55;
+}
+
+/* =====================================
+   PHASE 3 — BUTTON INTERACTIONS
+===================================== */
+
+button {
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.14);
+
+    cursor: pointer;
+}
+
+
+button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Keyboard accessibility */
+
+button:focus-visible {
+    outline: 2px solid #2563eb;
+
+    outline-offset: 3px;
+}
+
+/* =====================================
+   PHASE 3B — CARD HOVER EFFECTS
+===================================== */
+
+
+/* =====================================
+   STATISTICS CARDS
+===================================== */
+
+.stat-card {
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================
+   RECENT ACTIVITY CARDS
+===================================== */
+
+.activity-card {
+    transition:
+        transform 0.20s ease,
+        box-shadow 0.20s ease,
+        background-color 0.20s ease;
+
+    border-radius: 10px;
+
+    padding: 16px;
+}
+
+
+.activity-card:hover {
+    transform: translateY(-3px);
+
+    background-color: #fafbfc;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================
+   ACTIVITY ICON
+===================================== */
+
+.activity-icon {
+    transition:
+        transform 0.20s ease;
+}
+
+
+.activity-card:hover .activity-icon {
+    transform: scale(1.08);
+}
+
+
+/* =====================================
+QUICK ACTION CARDS
+===================================== */
+
+.quick-action-card {
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+
+.quick-action-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================
+VIEW COMPLAINT BUTTON
+===================================== */
+
+.activity-view-btn {
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.activity-view-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* =====================================
+ PHASE 3C — SECTION ENTRANCE ANIMATION
+===================================== */
+
+.admin-section,
+.stats-container,
+.statistics-section,
+.recent-activity-section,
+.admin-quick-actions {
+    animation: sectionFadeIn 0.45s ease both;
+}
+
+
+@keyframes sectionFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
